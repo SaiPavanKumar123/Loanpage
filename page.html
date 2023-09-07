@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="customerInfo-tab" data-toggle="tab" href="#customerInfo" role="tab" aria-controls="customerInfo" aria-selected="true">Customer Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="loanApplication-tab" data-toggle="tab" href="#loanApplication" role="tab" aria-controls="loanApplication" aria-selected="false">Loan Application</a>
+            </li>
+        </ul>
+        <form action="#" method="post" id="applicationForm">
+            <div class="tab-content" id="myTabsContent">
+                <div class="tab-pane fade show active" id="customerInfo" role="tabpanel" aria-labelledby="customerInfo-tab">
+                    <h2>Customer Information</h2>
+                    <div class="form-group">
+                        <label for="cust_firstname">First Name:</label>
+                        <input id="cust_firstname" type="text" class="form-control" name="cust_firstname" placeholder="Enter First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust_lastname">Last Name:</label>
+                        <input id="cust_lastname" type="text" class="form-control" name="cust_lastname" placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust_dob">Date of Birth:</label>
+                        <input id="cust_dob" type="date" class="form-control" name="cust_dob">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="loanApplication" role="tabpanel" aria-labelledby="loanApplication-tab">
+                    <h2>Loan Application</h2>
+                    <div class="form-group">
+                        <label for="loanTypeID">Loan Type:</label>
+                        <select class="form-control" name="loanTypeID" id="loanTypeID">
+                            <option value="1">Personal Loan</option>
+                            <option value="2">Home Loan</option>
+                            <option value="3">Vehicle Loan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amountRequired">Amount Required:</label>
+                        <input type="text" class="form-control" name="amountRequired" id="amountRequired" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthsRequired">Number of Months:</label>
+                        <input type="number" class="form-control" name="monthsRequired" id="monthsRequired" required>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="submitAll">Submit</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery (if needed) here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+       $(document).ready(function () {
+    $("#submitAll").click(function () {
+        // Access and use specific field values directly by their IDs
+        var firstName = document.getElementById("cust_firstname").value;
+        var lastName = document.getElementById("cust_lastname").value;
+        var dob = document.getElementById("cust_dob").value;
+        var loanType = document.getElementById("loanTypeID").value;
+        var amountRequired = document.getElementById("amountRequired").value;
+        var monthsRequired = document.getElementById("monthsRequired").value;
+
+        // You can now process these field values as needed
+        console.log("First Name: " + firstName);
+        console.log("Last Name: " + lastName);
+        console.log("Date of Birth: " + dob);
+        console.log("Loan Type: " + loanType);
+        console.log("Amount Required: " + amountRequired);
+        console.log("Months Required: " + monthsRequired);
+
+        // You can also perform further actions or send the data to a server here
+    });
+});
+             
+    </script>
+</body>
+</html>
